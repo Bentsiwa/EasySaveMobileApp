@@ -1,0 +1,29 @@
+{
+    "name": "hello world",
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-console": "^1.0.7",
+        "cordova-plugin-dialogs": "^1.2.1",
+        "cordova-plugin-statusbar": "^2.1.3",
+        "cordova-plugin-whitelist": "^1.2.2",
+        "phonegap-plugin-push": "^1.8.4"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-console": {},
+            "cordova-plugin-dialogs": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "phonegap-plugin-push": {
+                "SENDER_ID": "270845881290"
+            }
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
