@@ -56,7 +56,7 @@ var app = {
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
 
-            document.getElementById("text").innerHTML=data.registrationId;
+            alert('registration event: ' + data.registrationId);
 
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
@@ -75,11 +75,13 @@ var app = {
 
         push.on('error', function(e) {
             console.log("push error = " + e.message);
+            alert("error "+e.message);
         });
 
         push.on('notification', function(data) {
             console.log('notification event');
-            document.getElementById("text").innerHTML=data.message;
+          alert('notification event');
+          alert(data.message);
             navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
