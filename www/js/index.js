@@ -54,9 +54,18 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
+        //           messaging.requestPermission().then(function() {
+        //   console.log('Notification permission granted.');
+        //   // TODO(developer): Retrieve an Instance ID token for use with FCM.
+        //   // ...
+        // }).catch(function(err) {
+        //   console.log('Unable to get permission to notify.', err);
+        // });
+
             console.log('registration event: ' + data.registrationId);
 
             alert('registration event: ' + data.registrationId);
+            id.innerHTML=data.registrationId;
 
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
@@ -71,6 +80,8 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
+
+
         });
 
         push.on('error', function(e) {
