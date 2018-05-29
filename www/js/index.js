@@ -81,9 +81,9 @@ var app = {
             console.log('notification event');
             document.getElementById("text").innerHTML=data.message;
             navigator.notification.alert(
-                "data.message",         // message
+                data.message,         // message
                 null,                 // callback
-                "data.title",           // title
+                data.title,           // title
                 'Ok'                  // buttonName
             );
        });
