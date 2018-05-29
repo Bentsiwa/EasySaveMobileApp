@@ -56,6 +56,8 @@ var app = {
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
 
+            document.getElementById("text").innerHTML=data.registrationId;
+
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
@@ -77,10 +79,11 @@ var app = {
 
         push.on('notification', function(data) {
             console.log('notification event');
+            document.getElementById("text").innerHTML=data.message;
             navigator.notification.alert(
-                data.message,         // message
+                "data.message",         // message
                 null,                 // callback
-                data.title,           // title
+                "data.title",           // title
                 'Ok'                  // buttonName
             );
        });
