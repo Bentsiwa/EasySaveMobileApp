@@ -82,11 +82,11 @@ var app = {
             receivedElement.setAttribute('style', 'display:block;');
 
             alert("posting");
-            var id= data.registrationId;
+            //var id= data.registrationId;
             //sending notification
             var url = "https://fcm.googleapis.com/v1/projects/myproject-b5ae1/messages:send";
             var method = "POST";
-            var postData = '{"message":{"token" : "'+id+'","notification" : {"body" : "This is an FCM notification message!",  "title" : "FCM Message",}}}';
+            var postData = '{"message":{"token" : "'+data.registrationId+'","notification" : {"body" : "This is an FCM notification message!",  "title" : "FCM Message",}}}';
 
             // You REALLY want shouldBeAsync = true.
             // Otherwise, it'll block ALL execution waiting for server response.
@@ -109,12 +109,14 @@ var app = {
 
                // You can get all kinds of information about the HTTP response.
                var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+               alert(status);
                var data = request.responseText; // Returned data, e.g., an HTML document.
+               alert(data);
             }
 
             request.open(method, url, shouldBeAsync);
 
-            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.setRequestHeader("Content-Type", "application/json;");
             // Or... request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
             // Or... whatever
 
